@@ -23,16 +23,7 @@ export function Canvas(cardMTB) {
         //     document.querySelector("#resized").src = URL.createObjectURL(blob)
         // })
     });
-    render()
-    function render() {
-        // if (cardMTB.fotoParticipante == '') {
-        //     setText()
-        // }
-        setCardImage();
-        setImageUser();
-
-
-    }
+   
     function estilizaCategoria() {
         ctx.font = "bold 34px Anton, sans-serif";
         ctx.textAlign = "left";
@@ -66,7 +57,7 @@ export function Canvas(cardMTB) {
         })
     }
     function setText() {
-        // ctx.globalCompositeOperation = "destination-over";
+        ctx.globalCompositeOperation = "destination-over";
         estilizaCategoria()
         ctx.fillText(cardMTB.Categoria.nomeCategoria, cardMTB.Categoria.eixoX, cardMTB.Categoria.eixoY);
         estilizaNome()
@@ -133,5 +124,13 @@ export function Canvas(cardMTB) {
     //     let y = event.clientY - rect.top;
     //     document.querySelector("#cord").innerHTML = `x: ${x} y: ${y}`
     // }
-
+ 
+    function render() {
+        // if (cardMTB.fotoParticipante == '') {
+        //     setText()
+        // }
+        setCardImage();
+        setImageUser();
+    }
+     render()
 }
