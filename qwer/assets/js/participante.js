@@ -9,6 +9,7 @@ if (sessionStorage.getItem('token') == '') {
     window.location.href = '../index.html'
 }
 else {
+    window.location.href = 'index.html'
     btnLogout.addEventListener('click', () => {
         sessionStorage.clear()
         window.location.href = '../index.html'
