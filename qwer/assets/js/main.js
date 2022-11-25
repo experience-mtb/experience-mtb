@@ -142,9 +142,10 @@ docs.forEach(item => {
     }
 
 })
-var partesData = dataFimEditar.split("/");
-var data = new Date(partesData[2], partesData[1] - 1, partesData[0]);
-var dataLimite = new Date(("2022, 11, 15"));
+let partesData = dataFimEditar.split("/");
+let data = new Date(partesData[2], partesData[1] - 1, partesData[0]);
+let dataLimite = new Date(("2022, 11, 15"));
+let dataLimite2 = new Date(("2022, 11, 25"));
 let dataMaior
 if (data > dataLimite) {
     dataMaior = dataFimEditar
@@ -152,13 +153,15 @@ if (data > dataLimite) {
     dataMaior = formatDate(dataLimite, 'dd/mm/aaaa')
 }
 document.querySelector("#txtDataLimite").innerHTML = `Você tem até ${dataMaior} <br/> para editar as informações`
-if (new Date() > dataMaior) {
+if (new Date() > dataLimite2) {
+    divEditarInsc.style = 'display:none !important'
+    btnEditar.classList.add('disabled')
+} else if (new Date() > dataMaior) {
     console.log(partesData)
     divEditarInsc.style = 'display:none !important'
     btnEditar.classList.add('disabled')
 }
 if (img != "") {
-    console.log('first')
     getUrlImage(storage, img, cardFoto)
 } else {
     cardFoto.src = './assets/images/fotocard.png'
