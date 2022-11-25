@@ -84,9 +84,9 @@ export const lblLoginErrorMessage = document.querySelector('#lblLoginErrorMessag
 export const divLote = document.querySelector('#lote')
 // Lote
 export const dataHoje = new Date();
-export const dataLimiteLote = new Date(("2022, 10, 22"));
+export const dataLimiteLote = new Date(2022, 10, 25, 18);
 export const nomeLote = 'Lote Finish'
-export const dataLote = 'de 22.10 à 22.11'
+export const dataLote = 'de 22.10 à 25.11'
 export const precoLoteBr = 'R$140,00'
 export const precoLoteUy = "$1400,00"
 export const qrPix = '00020101021126670014br.gov.bcb.pix0114477893600001880227Lote Sprint Experience 20225204000053039865406135.005802BR5913YELLOW SPORTS6008BRASILIA621405102loteExp226304CAEE'
@@ -116,18 +116,18 @@ export let Paragrafo = (idP, classP, txtP, divP) => {
 export let LinkComIcone = (idLink, faIcon, classeIcon, btnClassLink, txtLink, titleLink, targetLink, hrefLink, divLink) => {
     let a = document.createElement('a');
     let icon = document.createElement('i');
-    icon.classList.add(faIcon)
-    icon.classList.add(classeIcon)
-    icon.classList.add('fa-fw')
+    icon.classList.add(faIcon);
+    icon.classList.add(classeIcon);
+    icon.classList.add('fa-fw');
     let link = document.createTextNode(txtLink);
     a.appendChild(icon);
     a.appendChild(link);
     a.id = idLink;
     a.title = titleLink;
-    a.target = targetLink
-    a.href = hrefLink
-    a.classList.add('btn')
-    a.classList.add(btnClassLink)
+    a.target = targetLink;
+    a.href = hrefLink;
+    a.classList.add('btn');
+    a.classList.add(btnClassLink);
     divLink.appendChild(a);
 }
 export function limparDados() {
@@ -160,7 +160,7 @@ export function fechaModal(tag) {
     $(tag).modal("hide");
 }
 export function addDaysToDate(date, days) {
-    var res = new Date(date);
+    let res = new Date(date);
     res.setDate(res.getDate() + days);
     return res;
 }
@@ -184,7 +184,7 @@ export function dataAtualFormatada(variavel) {
     return `${dia}/${mes}/${ano} - ${h}:${m}:${s}`;
 }
 export function download(div) {
-    var image = document.getElementById("myCanvas").toDataURL("image/png")
+    let image = document.getElementById("myCanvas").toDataURL("image/png")
         .replace("image/png", "image/octet-stream");
     div.setAttribute("href", image);
 

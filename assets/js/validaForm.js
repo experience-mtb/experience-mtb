@@ -115,8 +115,8 @@ export function BotoesPorNacionalidade(pais) {
 }
 export function formaDePagamentoPais(itemPais) {
     if (itemPais == 'Brasil') {
-        // if (dataHoje >= dataLimiteLote) {
-        txtDesconto.innerHTML = `<b>${nomeLote}</b> (${dataLote}) ${precoLoteBr}`
+        if (dataHoje >= dataLimiteLote) txtDesconto.innerHTML = `<b>${nomeLote}</b> (${dataLote}) ${precoLoteBr}`
+        else txtDesconto.hidden = true
         codigoQR.value = qrPix2
         document.querySelector("#imgQrPix").src = './assets/images/qrcode2.jpg'
         // } else {
@@ -143,7 +143,7 @@ export function formaDePagamentoPais(itemPais) {
         if (dataHoje >= dataLimiteLote) {
             txtDesconto.innerHTML = `<b>${nomeLote}</b> (${dataLote}) ${precoLoteUy}`
         } else {
-            txtDesconto.innerHTML = `<b>Lote Sprint</b> (de 07.10 à 21.10) $1350,00 `
+            txtDesconto.hidden = true
         }
         BotoesPorNacionalidade(itemPais)
         let btnLinkPagamento = document.querySelector("#btnLinkPagamento")
@@ -236,14 +236,14 @@ export function bloqueioCadastro() {
     }
 }
 export function calculaIdade(dataNasc) {
-    var dataAtual = new Date();
-    var anoAtual = dataAtual.getFullYear();
-    var anoNascParts = dataNasc.split('-').reverse();
-    var diaNasc = anoNascParts[0];
-    var mesNasc = anoNascParts[1];
-    var anoNasc = anoNascParts[2];
-    var idade = anoAtual - anoNasc;
-    var mesAtual = dataAtual.getMonth() + 1;
+    let dataAtual = new Date();
+    let anoAtual = dataAtual.getFullYear();
+    let anoNascParts = dataNasc.split('-').reverse();
+    let diaNasc = anoNascParts[0];
+    let mesNasc = anoNascParts[1];
+    let anoNasc = anoNascParts[2];
+    let idade = anoAtual - anoNasc;
+    let mesAtual = dataAtual.getMonth() + 1;
     //Se mes atual for menor que o nascimento, nao fez aniversario ainda;
     if (mesAtual < mesNasc) {
         idade--;
