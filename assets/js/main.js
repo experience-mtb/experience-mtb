@@ -21,6 +21,7 @@ if (dataHoje < dataLimiteLote) {
     document.querySelector('.header-wrapper').appendChild(span)
 
     document.querySelector('.header-wrapper').style = 'min-height: 36rem;'
+    Cadastrar();
 } else {
     let btn = document.querySelector('#btnInscricao')
     removeBtn(btn)
@@ -32,7 +33,7 @@ if (dataHoje < dataLimiteLote) {
     document.querySelector('.header-wrapper').style = 'min-height: 37rem;'
     document.querySelector('.header-wrapper').appendChild(div)
     divLote.hidden = true
-    Cadastrar();
+
 }
 formLogin.addEventListener('submit', async (e) => {
     e.preventDefault();
