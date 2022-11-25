@@ -9,14 +9,12 @@ function removeBtn(btn) {
         node.parentNode.removeChild(node);
     }
 }
-console.log('dataHoje', dataHoje)
-console.log('dataLimiteLote', dataLimiteLote)
 if (dataHoje < dataLimiteLote) {
     divLote.innerHTML = `<b>${nomeLote} </b> (${dataLote}) ${precoLoteBr} BR ou ${precoLoteUy} UY`
     const span = document.createElement("span")
     span.classList.add('text-bg-warning')
     span.classList.add('p-1')
-    let txt = document.createTextNode("*Inscrições se encerrarão as 18:00h ");
+    let txt = document.createTextNode("*Inscrições se encerrarão as 18:30h ");
     span.appendChild(txt);
     document.querySelector('.header-wrapper').appendChild(span)
 
